@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mateo Sciscento’s portfolio: game development projects, esports experience, and a journey toward gameplay systems engineering.">
+    <meta name="theme-color" content="#243d32">
+    <title>Home | Mateo Sciscento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="site-pages.css">
+    <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="ambience.css">
+    <script src="work.js" defer></script>
+</head>
+
+<body class="updated-pages">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- SITE HEADER -->
+    <header class="main-header">
+        <a class="site-brand" href="index.html">✦ Mateo Sciscento</a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="projects.html">Projects</a>
+            <a href="events.html">Events</a>
+            <a href="contact.html">Contact Me</a>
+        </nav>
+    </header>
+
+    <main id="main" class="page-shell">
+
+        <!-- INTRODUCTION -->
+        <section class="home-intro" aria-labelledby="home-title">
+            <div>
+                <p class="eyebrow">Economics · Spanish · Game Development</p>
+                <h1 id="home-title">Curiosity.<br><em>Creation.</em></h1>
+                <p class="lead">I’m Mateo Sciscento, an aspiring gameplay systems engineer.</p>
+                <p>
+                    An Economics and Spanish graduate from the University of Nevada, Reno,
+                    bringing experience in esports production to a growing interest in
+                    programming and game development.
+                </p>
+                <div class="page-actions">
+                    <a class="project-link" href="projects.html">Explore My Projects →</a>
+                    <a class="quiet-link" href="profile.html">More About Me ↗</a>
+                </div>
+            </div>
+            <figure class="portrait-frame">
+                <img src="assets/photo.jpg" alt="Portrait of Mateo Sciscento" width="480" height="540">
+            </figure>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="home-projects" aria-labelledby="quest-title">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">The Quest Log</p>
+                    <h2 id="quest-title">Learning through making.</h2>
+                </div>
+                <a class="quiet-link" href="projects.html">All Projects ↗</a>
+            </div>
+            <div class="quest-container">
+                <article class="quest-card">
+                    <p class="eyebrow">01 / Browser Extension</p>
+                    <h3>Focus Quest</h3>
+                    <p>A gamified productivity Chrome extension that helps with focusing and studying.</p>
+                    <a class="project-link" href="focus-quest.html">Explore Focus Quest →</a>
+                </article>
+                <article class="quest-card">
+                    <p class="eyebrow">02 / Puzzle Adventure</p>
+                    <h3>AUKA</h3>
+                    <p>A short Unity puzzle game made through concepts learned in my UNR CS328 class.</p>
+                    <a class="project-link" href="auka.html">Explore AUKA →</a>
+                </article>
+                <article class="quest-card">
+                    <p class="eyebrow">03 / Game Prototype</p>
+                    <h3>TopFest</h3>
+                    <p>A prototype exploring movement-based puzzles, inspired by Kuru Kuru Kururin.</p>
+                    <a class="project-link" href="topfest.html">Explore TopFest →</a>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- EVENT EXPERIENCE -->
+        <section class="home-events" aria-labelledby="home-events-title">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">Beyond the Projects</p>
+                    <h2 id="home-events-title">Behind the competition.</h2>
+                </div>
+                <a class="quiet-link" href="events.html">Explore Events ↗</a>
+            </div>
+            <p class="lead">
+                Event experience with Gaming Generations across Pokémon Regional Championships, NAIC, and Worlds.
+                Head Tournament Organizer for Edgeguard II.
+            </p>
+            <p>Production with Gaming Generations at Genesis X2 and EVO 2025 and 2026.</p>
+            <a class="project-link" href="events.html">View My Event Experience →</a>
+        </section>
+
+        <!-- CONTACT AND OPTIONAL MUSIC -->
+        <section class="closing-panel" aria-labelledby="hello-title">
+            <div>
+                <p class="eyebrow">The Next Chapter</p>
+                <h2 id="hello-title">Thank you for visiting.</h2>
+                <p>Contact Me!</p>
+            </div>
+            <a class="project-link" href="contact.html">Contact Me ↗</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>© 2026 Mateo Sciscento</p>
+        <p>Hala Madrid!</p>
+    </footer>
+
+    <!-- THIRD-PARTY COPYRIGHT AND CREDITS -->
+    <section class="asset-credits" aria-label="Copyright and credits">
+        <p>
+            The Legend of Zelda music, Link sprite imagery, and related game references:
+            © Nintendo and the respective rights holders.
+        </p>
+        <p>
+            This independent portfolio and Focus Quest are not affiliated with,
+            sponsored by, or endorsed by Nintendo.
+            <a href="credits.html">Copyright &amp; Credits</a>
+        </p>
+    </section>
+
+
+    <!-- WALKING ADVENTURER AND SITE-WIDE CONTROLS -->
+    <section class="quest-ambience" aria-label="Music and animation controls">
+        <div class="walker-trail" aria-hidden="true">
+            <div class="walking-adventurer">
+                <!-- Focus Quest sprite: eight 24 × 26 pixel walking frames. -->
+                <span class="link-walk-sprite"></span>
+            </div>
+        </div>
+        <div class="ambience-controls">
+            <button id="music-button" type="button" aria-pressed="false">Play Music</button>
+            <p id="music-status" role="status">Loading music…</p>
+            <button id="animation-button" type="button" aria-pressed="false">Pause Walker</button>
+        </div>
+    </section>
+
+</body>
+
+</html>

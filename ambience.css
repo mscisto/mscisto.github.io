@@ -1,0 +1,141 @@
+/* SITE-WIDE MUSIC AND WALKING ADVENTURER */
+
+.quest-ambience {
+    width: min(1180px, calc(100% - 36px));
+    margin: 15px auto 25px;
+    color: #fffef3;
+}
+
+.walker-trail {
+    position: relative;
+    height: 74px;
+    overflow: hidden;
+    border-bottom: 1px solid #ffd25f66;
+}
+
+.walking-adventurer {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 48px;
+    height: 52px;
+    animation: cross-website 24s linear infinite;
+}
+
+/* Two-times scale keeps the original eight-frame sprite crisp. */
+
+.link-walk-sprite {
+    display: block;
+    width: 48px;
+    height: 52px;
+    background-image: url("assets/link-walk-left.png");
+    background-repeat: no-repeat;
+    background-size: 384px 52px;
+    image-rendering: pixelated;
+    animation: link-walk-left 0.8s steps(8) infinite;
+}
+
+.ambience-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding-top: 18px;
+}
+
+.ambience-controls button {
+    padding: 10px 16px;
+    border: 1px solid #ffd25f88;
+    border-radius: 4px;
+    background: #172b23;
+    color: #ffd25f;
+    font: 12px/1.6 system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.ambience-controls button:hover {
+    background: #365b47;
+}
+
+.ambience-controls button:focus-visible {
+    outline: 3px solid #ffd25f;
+    outline-offset: 4px;
+}
+
+.quest-ambience #music-status {
+    margin: 0;
+    color: #bdc9bf;
+    font: 12px/1.6 system-ui, sans-serif;
+    text-align: center;
+}
+
+.walker-paused .walking-adventurer,
+.walker-paused .link-walk-sprite {
+    animation-play-state: paused;
+}
+
+/* The sprite faces left, so its movement follows that direction. */
+
+@keyframes cross-website {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -52px;
+    }
+}
+
+@keyframes link-walk-left {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: -384px;
+    }
+}
+
+/* KEEP THE CHARACTER STILL WHEN REDUCED MOTION IS REQUESTED */
+
+@media (prefers-reduced-motion: reduce) {
+    .walking-adventurer {
+        animation: none;
+        left: calc(50% - 24px);
+    }
+
+    .link-walk-sprite {
+        animation: none;
+    }
+
+    #animation-button {
+        display: none;
+    }
+}
+
+/* SITE-WIDE COPYRIGHT ACKNOWLEDGMENTS */
+
+.asset-credits {
+    width: min(1180px, calc(100% - 36px));
+    margin: 0 auto 28px;
+    padding: 18px 0;
+    border-top: 1px solid #ffffff26;
+}
+
+.asset-credits p {
+    color: #bdc9bf;
+    text-align: center;
+    font: 11px/1.8 system-ui, sans-serif;
+    margin: 5px 0;
+}
+
+.asset-credits a {
+    color: #ffd25f;
+    text-underline-offset: 4px;
+}
+
+.asset-credits a:focus-visible {
+    outline: 3px solid #ffd25f;
+    outline-offset: 4px;
+}
