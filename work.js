@@ -4,6 +4,21 @@
 (() => {
     "use strict";
 
+    // Use the page language for controls and status messages.
+    const messages = {
+        "Turn Music Off": "Apagar música",
+        "Play Music": "Reproducir música",
+        "Music is playing.": "La música está sonando.",
+        "Music is off.": "La música está apagada.",
+        "Press Play Music to enable sound.": "Pulsa «Reproducir música» para activar el sonido.",
+        "Music is unavailable. Please try again.": "La música no está disponible. Vuelve a intentarlo.",
+        "Music could not load.": "No se ha podido cargar la música.",
+        "Resume Walker": "Reanudar a Link",
+        "Pause Walker": "Pausar a Link"
+    };
+    const isSpanish = document.documentElement.lang.startsWith("es");
+    const text = (message) => isSpanish ? (messages[message] || message) : message;
+
     const musicButton = document.getElementById("music-button");
     const musicStatus = document.getElementById("music-status");
     const animationButton = document.getElementById("animation-button");
@@ -30,7 +45,7 @@
         }
     }
 
-    const music = new Audio("assets/music.mp3");
+    const music = new Audio(new URL("assets/music.mp3", document.currentScript.src));
     music.loop = true;
     music.volume = 0.4;
     music.preload = "auto";
@@ -58,10 +73,10 @@
     function updateMusicControls(message) {
         const playing = !music.paused;
 
-        musicButton.textContent = playing ? "Turn Music Off" : "Play Music";
+        musicButton.textContent = playing ? text("Turn Music Off") : text("Play Music");
         musicButton.setAttribute("aria-pressed", String(playing));
         musicStatus.textContent = message || (
-            playing ? "Music is playing." : "Music is off."
+            playing ? text("Music is playing.") : text("Music is off.")
         );
     }
 
@@ -88,8 +103,8 @@
 
             waitingForGesture = error.name === "NotAllowedError";
             updateMusicControls(waitingForGesture
-                ? "Press Play Music to enable sound."
-                : "Music is unavailable. Please try again.");
+                ? text("Press Play Music to enable sound.")
+                : text("Music is unavailable. Please try again."));
         }
     }
 
@@ -130,7 +145,7 @@
     music.addEventListener("pause", () => updateMusicControls());
     music.addEventListener("error", () => {
         waitingForGesture = false;
-        updateMusicControls("Music could not load.");
+        updateMusicControls(text("Music could not load."));
     });
 
     // Save periodically and before navigation; a new page resumes this position.
@@ -166,7 +181,7 @@
 
     function updateWalker() {
         ambience.classList.toggle("walker-paused", walkerPaused);
-        animationButton.textContent = walkerPaused ? "Resume Walker" : "Pause Walker";
+        animationButton.textContent = walkerPaused ? text("Resume Walker") : text("Pause Walker");
         animationButton.setAttribute("aria-pressed", String(walkerPaused));
     }
 
