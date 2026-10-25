@@ -228,32 +228,28 @@
 
 /* LUDWIG SMASH INVITATIONAL LOGO AND SUPPORTING PHOTO */
 
-.event-card-featured {
-    grid-column: 1 / -1;
-}
-
 .ludwig-logo-panel {
-    aspect-ratio: auto;
-    padding: 0;
     background: #383838;
-}
-
-.ludwig-logo-panel img {
-    width: 100%;
-    height: auto;
-    max-height: 340px;
-    object-fit: contain;
 }
 
 .ludwig-card-details {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
-    gap: 30px;
+    grid-template-columns: minmax(0, 1fr) 100px;
+    gap: 18px;
     align-items: center;
 }
 
+.ludwig-card-text {
+    min-width: 0;
+}
+
+.ludwig-card-text h3 {
+    overflow-wrap: anywhere;
+}
+
 .ludwig-event-photo {
-    width: 100%;
+    width: 100px;
+    max-width: 100%;
     margin: 0;
 }
 
@@ -268,10 +264,10 @@
 @media (max-width: 640px) {
     .ludwig-card-details {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 18px;
     }
 
     .ludwig-event-photo {
-        max-width: 320px;
+        justify-self: end;
     }
 }
